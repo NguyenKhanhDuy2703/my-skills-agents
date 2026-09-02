@@ -1,0 +1,52 @@
+name: Validate Skills Format
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate SKILL.md Frontmatters
+        run: |
+          python -c '
+          import os, sys, re
+
+          errors = []
+          for root, dirs, files in os.walk("."):
+              if "SKILL.md" in files:
+                  filepath = os.path.join(root, "SKILL.md")
+                  with open(filepath, "r", encoding="utf-8") as f:
+                      content = f.read()
+                  
+                  # Check YAML frontmatter format
+                  match = re.match(r"^---\s*\n(.*?)\n---\s*\n", content, re.DOTALL)
+                  if not match:
+                      errors.append(f"{filepath}: Thiếu YAML frontmatter (--- ... ---)")
+                      continue
+                  
+                  frontmatter = match.group(1)
+                  if not re.search(r"^name:\s*.+", frontmatter, re.MULTILINE):
+                      errors.append(f"{filepath}: Thiếu trường '\''name:'\'' trong frontmatter")
+                  if not re.search(r"^description:\s*.+", frontmatter, re.MULTILINE):
+                      errors.append(f"{filepath}: Thiếu trường '\''description:'\'' trong frontmatter")
+
+          if errors:
+              print("❌ Lỗi kiểm tra SKILL.md:")
+              for err in errors:
+                  print("  -", err)
+              sys.exit(1)
+          else:
+              print("✅ Tất cả các file SKILL.md đều hợp lệ theo chuẩn!")
+          '
