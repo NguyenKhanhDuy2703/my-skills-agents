@@ -1,141 +1,125 @@
 # 🧠 Centralized Agent Skills Hub (`my-skills-agents`)
 
-An open, topic-driven collection of **AI Agent Skills** designed under the **`@skills` Protocol** (3-Tier Delivery Model) for modern coding agents (Google Antigravity, Claude Code, Cursor, Codex, AdaL).
+Bộ sưu tập kỹ năng quy trình phát triển phần mềm chuẩn mực (**Software Engineering & Development Workflow Skills**) cho AI Coding Agents (Google Antigravity, Claude Code, Cursor, Codex, AdaL), tuân theo **Giao thức `@skills` (Mô hình 3 Tầng — 3-Tier Delivery Model)**.
 
-> **Core Philosophy:** Attention is a scarce budget. Do not install hundreds of skills permanently into the system prompt. Instead: **Reference on-demand**, **Save what you adapt**, and **Auto-trigger only critical guardrails**.
+> **Triết lý cốt lõi:** Ngữ cảnh hệ thống (Context window) là tài nguyên hữu hạn và quý giá. Thay vì cài đặt vĩnh viễn hàng chục skill làm nặng prompt và phân tán sự chú ý của AI, hãy: **Tham chiếu on-demand (0 token)**, **Lưu những gì cần tùy biến** và **Chỉ tự động kích hoạt những quy tắc cốt lõi (< 10 skills)**.
 
 ---
 
 ## 📑 Danh mục Skills theo Chủ đề (Topic Directory)
 
-Nhờ cơ chế **"Directory as a Menu"**, bạn có thể gọi một danh mục bất kỳ để xem menu các skill con, hoặc gọi trực tiếp từng skill.
+Nhờ cơ chế **"Directory as a Menu"**, bạn có thể gọi cả thư mục chủ đề để xem menu hoặc gọi trực tiếp từng skill.
 
-```
+```text
 my-skills-agents/
-├── 👁️ ai-computer-vision/          # Thị giác máy tính & Xử lý Video thời gian thực
-│   ├── yolov8-multiprocessing-stream
-│   ├── reid-osnet-tracking
-│   └── spatial-zone-analytics
 │
-├── ⚡ backend-distributed/          # Backend phân tán & Hàng đợi Dữ liệu
-│   ├── redis-streams-pipeline
-│   └── fastapi-async-architecture
+├── 📐 architecture-and-specs/          # Thiết kế kiến trúc & Đặc tả
+│   ├── spec-driven-development
+│   ├── documentation-and-adrs
+│   ├── deprecation-and-migration
+│   └── context-engineering
 │
-├── 🎨 frontend-engineering/         # Frontend, Canvas thời gian thực & UI Tokens
-│   ├── realtime-canvas-overlay
-│   └── tailwind-design-system
+├── ⚙️ development-workflows/           # Quy trình lập trình & Code Craftsmanship
+│   ├── test-driven-development
+│   ├── incremental-implementation
+│   ├── code-simplification
+│   ├── git-workflow-and-versioning
+│   ├── interview-me
+│   └── karpathy-guidelines
 │
-└── 🛡️ quality-and-workflow/         # Chuẩn mực Code, Debug & Kiểm thử
-    ├── karpathy-guidelines
-    └── doubt-driven-debugging
+├── 🔍 debugging-and-observability/     # Gỡ lỗi & Giám sát hệ thống
+│   ├── debugging-and-error-recovery
+│   ├── doubt-driven-development
+│   ├── observability-and-instrumentation
+│   └── performance-optimization
+│
+├── 🎨 frontend-and-testing/            # Giao diện & Kiểm thử UI / E2E
+│   ├── frontend-ui-engineering
+│   ├── frontend-design
+│   ├── browser-testing-with-devtools
+│   ├── webapp-testing
+│   └── web-artifacts-builder
+│
+└── 🤖 agent-meta/                      # Quản lý & Vận hành Agent
+    └── using-agent-skills
 ```
 
-### 1. 👁️ `ai-computer-vision`
-* [`yolov8-multiprocessing-stream`](file:///d:/Project_NCKH/spacelensproject/my-skills-agents/ai-computer-vision/yolov8-multiprocessing-stream/SKILL.md) — Kiến trúc xử lý luồng RTSP đa camera song song (multiprocessing), chống nghẽn GIL và tối ưu inference FPS.
-* [`reid-osnet-tracking`](file:///d:/Project_NCKH/spacelensproject/my-skills-agents/ai-computer-vision/reid-osnet-tracking/SKILL.md) — Re-Identification với OSNet (512-dim embedding) + Cosine similarity duy trì ID khi đối tượng ra vào khung hình.
-* [`spatial-zone-analytics`](file:///d:/Project_NCKH/spacelensproject/my-skills-agents/ai-computer-vision/spatial-zone-analytics/SKILL.md) — Thuật toán phân tích không gian: Ray-casting Point-in-Polygon cho Tripwire, Dwell Time và Spatial Heatmap matrix.
+---
 
-### 2. ⚡ `backend-distributed`
-* [`redis-streams-pipeline`](file:///d:/Project_NCKH/spacelensproject/my-skills-agents/backend-distributed/redis-streams-pipeline/SKILL.md) — Mô hình Streaming Producer-Consumer qua Redis Streams (`XADD`, `XREADGROUP`, `XACK`, `XAUTOCLAIM`).
-* [`fastapi-async-architecture`](file:///d:/Project_NCKH/spacelensproject/my-skills-agents/backend-distributed/fastapi-async-architecture/SKILL.md) — Chuẩn thiết kế Async FastAPI: Lifespan context manager, BackgroundTasks, Dependency Injection & structured errors.
+### 1. 📐 `architecture-and-specs` (Thiết kế & Đặc tả)
+* [`spec-driven-development`](architecture-and-specs/spec-driven-development/SKILL.md) — Phát triển theo hướng đặc tả (SDD): Viết spec rõ ràng trước khi code để tránh làm sai yêu cầu.
+* [`documentation-and-adrs`](architecture-and-specs/documentation-and-adrs/SKILL.md) — Ghi nhận quyết định kiến trúc qua Architecture Decision Records (ADRs) và tài liệu kỹ thuật chuẩn.
+* [`deprecation-and-migration`](architecture-and-specs/deprecation-and-migration/SKILL.md) — Quy trình migrate thư viện/API cũ sang mới an toàn, có lộ trình và không gây gián đoạn.
+* [`context-engineering`](architecture-and-specs/context-engineering/SKILL.md) — Kỹ thuật quản lý và tối ưu ngữ cảnh prompt, tránh quá tải token và loãng thông tin.
 
-### 3. 🎨 `frontend-engineering`
-* [`realtime-canvas-overlay`](file:///d:/Project_NCKH/spacelensproject/my-skills-agents/frontend-engineering/realtime-canvas-overlay/SKILL.md) — Kỹ thuật vẽ Bounding Box, Tracking Trail và Heatmap đồng bộ với video Canvas (sử dụng `requestAnimationFrame` và tỉ lệ scale tọa độ).
-* [`tailwind-design-system`](file:///d:/Project_NCKH/spacelensproject/my-skills-agents/frontend-engineering/tailwind-design-system/SKILL.md) — Hệ thống Design System: Semantic tokens, Modern Dark Theme, Glassmorphism và Micro-interactions.
+### 2. ⚙️ `development-workflows` (Quy trình Lập trình Thực chiến)
+* [`test-driven-development`](development-workflows/test-driven-development/SKILL.md) — Quy trình TDD chuẩn mực (Red-Green-Refactor): Viết test trước, code làm pass test sau.
+* [`incremental-implementation`](development-workflows/incremental-implementation/SKILL.md) — Triển khai tính năng phức tạp theo từng bước nhỏ (step-by-step), kiểm chứng từng bước.
+* [`code-simplification`](development-workflows/code-simplification/SKILL.md) — Tối giản mã nguồn, loại bỏ trừu tượng hóa quá mức (over-abstraction) và dead code.
+* [`git-workflow-and-versioning`](development-workflows/git-workflow-and-versioning/SKILL.md) — Quy chuẩn commit thông minh, phân chia branch, xử lý merge conflict và tạo Pull Request.
+* [`interview-me`](development-workflows/interview-me/SKILL.md) — Kỹ thuật phỏng vấn ngược người dùng để làm rõ mọi yêu cầu mơ hồ trước khi viết code.
+* [`karpathy-guidelines`](development-workflows/karpathy-guidelines/SKILL.md) — 4 nguyên tắc vàng của Andrej Karpathy: Think Before Coding, Simplicity First, Surgical Changes, Goal-Driven Execution.
 
-### 4. 🛡️ `quality-and-workflow`
-* [`karpathy-guidelines`](file:///d:/Project_NCKH/spacelensproject/my-skills-agents/quality-and-workflow/karpathy-guidelines/SKILL.md) — 4 nguyên tắc vàng giảm thiểu ảo giác: Think Before Coding, Simplicity First, Surgical Changes, Goal-Driven Execution.
-* [`doubt-driven-debugging`](file:///d:/Project_NCKH/spacelensproject/my-skills-agents/quality-and-workflow/doubt-driven-debugging/SKILL.md) — Quy trình 4 bước cô lập lỗi hệ thống phân tán và AI pipeline mà không đoán mò.
+### 3. 🔍 `debugging-and-observability` (Gỡ lỗi & Giám sát)
+* [`debugging-and-error-recovery`](debugging-and-observability/debugging-and-error-recovery/SKILL.md) — Chiến lược cô lập bug, phân tích stack trace và phục hồi hệ thống khi có sự cố.
+* [`doubt-driven-development`](debugging-and-observability/doubt-driven-development/SKILL.md) — Lập trình hoài nghi giả định: Luôn kiểm chứng dữ liệu thực tế tại runtime thay vì tin vào giả định.
+* [`observability-and-instrumentation`](debugging-and-observability/observability-and-instrumentation/SKILL.md) — Thiết lập logging có cấu trúc, metrics, tracing và health check cho hệ thống.
+* [`performance-optimization`](debugging-and-observability/performance-optimization/SKILL.md) — Kỹ thuật profiling, phát hiện bottleneck I/O, CPU, bộ nhớ và tối ưu hóa thời gian phản hồi.
+
+### 4. 🎨 `frontend-and-testing` (Giao diện & Kiểm thử Tự động)
+* [`frontend-ui-engineering`](frontend-and-testing/frontend-ui-engineering/SKILL.md) — Kỹ thuật xây dựng UI chất lượng cao, responsive, tối ưu render và accessibility (a11y).
+* [`frontend-design`](frontend-and-testing/frontend-design/SKILL.md) — Định hình phong cách thiết kế, typography, bảng màu HSL và micro-interactions cao cấp.
+* [`browser-testing-with-devtools`](frontend-and-testing/browser-testing-with-devtools/SKILL.md) — Kiểm thử tự động trên trình duyệt, inspect DOM, chụp console logs và network requests.
+* [`webapp-testing`](frontend-and-testing/webapp-testing/SKILL.md) — Bộ công cụ kiểm thử End-to-End tự động cho ứng dụng web bằng Playwright.
+* [`web-artifacts-builder`](frontend-and-testing/web-artifacts-builder/SKILL.md) — Xây dựng Artifacts giao diện web đa component (React, Tailwind CSS, shadcn/ui).
+
+### 5. 🤖 `agent-meta` (Vận hành Agent)
+* [`using-agent-skills`](agent-meta/using-agent-skills/SKILL.md) — Hướng dẫn và nguyên tắc để AI Agent biết cách tự chọn, đọc và kích hoạt kỹ năng đúng lúc.
 
 ---
 
 ## 🚀 Hướng Dẫn Sử Dụng (The 3-Tier Delivery Model)
 
-### 📌 Tầng 1: Sử Dụng Tức Thì On-Demand (Tier 1 — Reference)
-Dùng cho các tác vụ 1 lần hoặc khi cần kiến thức chuyên sâu cho 1 task cụ thể. **Chi phí token: 0 token cố định** (chỉ tải vào ngữ cảnh khi gọi và giải phóng sau phiên).
+### 📌 Tầng 1: Sử Dụng On-Demand Tức Thì (Tier 1 — Reference)
+Dùng cho hầu hết các tác vụ hàng ngày. **Chi phí token: 0 token cố định** (chỉ tải vào cuối ngữ cảnh khi gọi).
 
 ```text
-# Gọi trực tiếp 1 skill từ GitHub
-@skills:gh:NguyenKhanhDuy2703/my-skills-agents/ai-computer-vision/yolov8-multiprocessing-stream
+# 1. Gọi trực tiếp 1 skill:
+"Áp dụng @skills:gh:NguyenKhanhDuy2703/my-skills-agents/development-workflows/test-driven-development để viết unit test cho service này."
 
-# Gọi thư mục để Agent hiển thị Menu lựa chọn
-@skills:gh:NguyenKhanhDuy2703/my-skills-agents/backend-distributed
+# 2. Xem Menu danh mục của một chủ đề:
+"@skills:gh:NguyenKhanhDuy2703/my-skills-agents/debugging-and-observability"
 ```
 
 ---
 
-### 💾 Tầng 2: Lưu & Sở Hữu Trong Dự Án (Tier 2 — Saved / Vendor)
-Dùng khi bạn muốn đưa skill vào quản lý trong Git của dự án cụ thể để team cùng chia sẻ hoặc sửa đổi cho hợp với dự án. **Chi phí token: 0 token cố định**.
+### 💾 Tầng 2: Lưu Vào Dự Án Cụ Thể (Tier 2 — Saved / Vendor)
+Dùng khi bạn muốn đưa skill vào quản lý trong Git của dự án để cả team dùng chung hoặc chỉnh sửa theo dự án:
 
-* **Cách 1 (Bằng hậu tố `:save`):**
-  ```text
-  @skills:gh:NguyenKhanhDuy2703/my-skills-agents/backend-distributed/redis-streams-pipeline:save
-  ```
-  *Agent sẽ tự động sao chép skill về `.atskills/` hoặc `.agents/skills/` trong dự án của bạn kèm theo file `.source` đánh dấu nguồn gốc.*
-
-* **Cách 2 (Thủ công):**
-  Tải/copy thư mục skill vào thư mục `.agents/skills/<skill-name>/` tại gốc dự án của bạn.
+```text
+@skills:gh:NguyenKhanhDuy2703/my-skills-agents/development-workflows/karpathy-guidelines:save
+```
+*Skill sẽ được tải về thư mục `.atskills/` hoặc `.agents/skills/` trong dự án của bạn.*
 
 ---
 
 ### ⚡ Tầng 3: Tự Động Kích Hoạt (Tier 3 — Auto-Trigger / Install)
-Chỉ áp dụng cho **những quy chuẩn cốt lõi bắt buộc** (ví dụ: `karpathy-guidelines`). 
-Thêm một dòng vào file `.autotrigger` (hoặc `.atskills/.autotrigger`):
+Chỉ áp dụng cho **những quy chuẩn bắt buộc** (khuyên dùng $\le 5$ skills). Thêm một dòng vào file `.autotrigger` (hoặc `.atskills/.autotrigger`):
 
 ```gitignore
-# Tự động kích hoạt skill đã lưu nội bộ
-quality-and-workflow/karpathy-guidelines
-
-# Hoặc theo dõi trực tiếp từ GitHub repo (luôn cập nhật bản mới nhất)
-@gh:NguyenKhanhDuy2703/my-skills-agents/quality-and-workflow/karpathy-guidelines
-```
-
-> ⚠️ **Khuyến nghị quan trọng:** Luôn giữ file `.autotrigger` **dưới 10 skills** để đảm bảo khả năng kích hoạt chính xác 100% của AI Agent.
-
----
-
-### 🗑️ Cách Xóa / Gỡ Bỏ Skill
-
-1. **Hủy tự động kích hoạt:** Xóa dòng tương ứng trong file `.autotrigger`.
-2. **Xóa hoàn toàn skill đã lưu trong dự án:** Xóa thư mục của skill đó trong `.agents/skills/<tên-skill>` hoặc `.atskills/<tên-skill>`.
-
----
-
-## 🛠️ Quy Chuẩn Đóng Góp & Tạo Skill Mới (`SKILL.md`)
-
-Mỗi skill bắt buộc phải đặt trong thư mục riêng và có file `SKILL.md` tuân thủ định dạng chuẩn sau:
-
-```markdown
----
-name: ten-skill-ngan-gon
-description: Mô tả chính xác 1 câu về nhiệm vụ và khi nào cần kích hoạt skill này.
----
-
-# Tên Skill
-
-## 1. Mục tiêu & Giả định (Goal & Context)
-- Nêu rõ bài toán cần giải quyết.
-
-## 2. Nguyên tắc & Quy chuẩn (Core Rules)
-- DO: Những điều bắt buộc làm.
-- DON'T: Những điều tuyệt đối tránh.
-
-## 3. Quy trình thực hiện (Step-by-Step Instructions)
-1. Bước 1...
-2. Bước 2...
-
-## 4. Code Mẫu Chuẩn (Production-Ready Code)
-```python
-# Code mẫu hoàn chỉnh, không dùng mã giả (pseudo-code)
-```
-
-## 5. Xử lý sự cố & Kiểm thử (Troubleshooting & Verification)
-- Cách kiểm tra kết quả...
+# Tự động kích hoạt nguyên tắc code Karpathy
+@gh:NguyenKhanhDuy2703/my-skills-agents/development-workflows/karpathy-guidelines
 ```
 
 ---
 
-## 📄 Giấy phép & Tác giả
+### 🗑️ Cách Gỡ Bỏ / Xóa Skill
+* **Tắt tự động kích hoạt:** Xóa dòng tương ứng trong file `.autotrigger`.
+* **Xóa skill đã lưu nội bộ:** Xóa thư mục skill tương ứng trong `.agents/skills/` hoặc `.atskills/`.
+
+---
+
+## 📄 Giấy phép & Đóng góp
 * **Tác giả:** [Nguyen Khanh Duy](https://github.com/NguyenKhanhDuy2703)
-* **Giao thức tham chiếu:** `@skills` protocol (SylphAI / UT Austin)
+* **Quy chuẩn:** Giao thức `@skills` protocol (SylphAI / UT Austin)
 * **Giấy phép:** MIT License
